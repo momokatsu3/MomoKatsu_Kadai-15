@@ -78,8 +78,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         // チェックマークを反転
-        selectItems[indexPath.row].check = !selectItems[indexPath.row].check
-        print("チェックマーク：", selectItems[indexPath.row].check, ",   名 前：", selectItems[indexPath.row].name)
+        selectItems[indexPath.row].check.toggle()
 
         // TableView の特定の行だけをリロード
         self.tableView.reloadRows(at: [indexPath], with: .fade)//automatic) .none)
